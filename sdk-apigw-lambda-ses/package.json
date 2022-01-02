@@ -1,0 +1,18 @@
+{
+  "name": "sdk-apigw-lambda-ses",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "sam build",
+    "nodemon": "nodemon --exec sam build",
+    "api": "sam local start-api --port 3001 --docker-network guided-selling_default --debug",
+    "api:debug": "sam local start-api --port 3001 --debug-port 5858 --docker-network guided-selling_default --debug",
+    "lambda": "sam local start-lambda --port 3002 --docker-network guided-selling_default --debug",
+    "lambda:debug": "sam local start-lambda --port 3002 --debug-port 5858 --docker-network guided-selling_default --debug",
+    "test": "jest --testPathIgnorePatterns=/.aws-sam/",
+    "stack:delete": "aws cloudformation delete-stack --stack-name sdk-apigw-lambda-ses"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
